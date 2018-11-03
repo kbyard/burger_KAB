@@ -1,0 +1,94 @@
+body {
+    background-image: url("../images/background_burgers.png");
+}
+
+.container {
+    align-content: center;
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #a22f30;
+    height:357px;
+    position: relative;
+}
+
+.devoured-tp {
+    background-image: url("../images/warning_hf.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #a22f30;
+    height:100px;
+    position: relative;
+    background-position: center;
+}
+
+.special {
+    background-image: url("../images/burger_special.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #a22f30;
+    height:100px;
+    position: relative;
+    background-position: center;
+}
+
+#textarea {
+    float: none;
+    margin: 20px auto;
+    opacity: 0.95;
+    width: 30%;
+}
+
+#submit {
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: white;
+}
+
+.newBurger {
+    float: left;
+    width: 45%;
+}
+
+.devoured {
+    float: right;
+    width: 45%;
+}
+
+.newItem {
+    background-color: whitesmoke;
+    border: solid;
+    border-bottom-width: medium;
+    border-color: #00b359;
+    opacity: 0.95;
+}
+
+.devouredItem {
+    background-color: whitesmoke;
+    border: solid;
+    border-bottom-width: medium;
+    border-color: #9ea3ae;
+    opacity: 0.95;
+}
+
+
+
+/* .footer-left, .footer-right {
+    background-image: url("../images/warning_hf_sm.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #a22f30;
+    width: 80px;
+    position: center;
+} */
+
+footer {
+    background-color: black;
+    color: #a22f30;
+}

@@ -1,28 +1,63 @@
-<h1>Bob's Burgers!</h1>
+<div class="container upper">
 
-<h2>Burgers that haven't been eaten!</h2>
-<ul>
-    {{#each burgers}}
-    {{#unless eaten}}
-        {{> burgers/burger-block eaten=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
+    <div class="jumbotron text-center"></div>
 
-<h2>Burgers that have been eaten!</h2>
-<ul>
-    {{#each burgers}}
-        {{#if eaten}}
-            {{> burgers/burger-block eaten=false}}
-        {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Build Your Own!</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="name">
+    <div class="newBurger">
+        <div class="col-xs-12 text-center" class="task">
+            <div class="special text-center"></div>
+            <br>
+            <div class="row">
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                        <div class="col-xs-6 text-center">
+                            <button>
+                                <strong>
+                                    {{this.burger_name}}
+                                </strong>
+                                <br>
+                                {{this.burger_description}}
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center">
+                            <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+                                <input input type="hidden" type="text" name="burger_id" value={{this.id}}>
+                                <br>
+                                <button type="submit" class="btn btn-default">Devour it!</button>
+                            </form>
+                        </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
+        </div>
     </div>
-    <button type="submit">Add Burger</button>
-</form>
+
+    <div class="devoured">
+        <div class="col-xs-6 text-center" class="task">
+            <div class="devoured-tp text-center"></div>
+            <br>
+            {{#each burgers}}
+                {{#if this.devoured}}
+                    <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center enter_section">
+            <h4>Enter a burger you want to eat, then click the "Submit" button.</h4>
+            <form action="/burgers/create" method="POST">
+                <input type="text" class="form-control" name="burger_name" value="" id="textarea">
+                <button type="submit" class="btn-lg btn-info" id="text-enter-button">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<footer>
+    Copyright 2018 | Kathrin Byard
+</footer>
